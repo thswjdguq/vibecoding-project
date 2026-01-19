@@ -1,46 +1,83 @@
-# Getting Started with Create React App
+# Smart Campus Portal
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+스마트 캠퍼스 포털은 RAG 기반 AI 챗봇과 PWA 기술을 활용한 차세대 스마트 캠퍼스 서비스입니다.
 
-## Available Scripts
+## 🚀 주요 기능
 
-In the project directory, you can run:
+- **🤖 AI 챗봇**: 학사 정보 자연어 질의응답
+- **📊 학점 계산기**: 졸업요건 체크 및 학점 관리
+- **⭐ 강의 리뷰**: 수강평 공유 시스템
+- **📢 공지사항**: 카테고리별 공지 및 검색
+- **📱 PWA**: 홈 화면에 설치 가능한 Progressive Web App
+- **🌙 다크 모드**: 다크/라이트 테마 지원
 
-### `npm start`
+## 🛠️ 기술 스택
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Frontend
+- React 19 + TypeScript
+- Tailwind CSS 4.x
+- React Router
+- PWA (Service Worker)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Backend (예정)
+- Node.js + Express
+- MongoDB Atlas
+- OpenAI API + LangChain
+- Puppeteer (웹 크롤링)
 
-### `npm test`
+## 📦 설치 및 실행
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+# 패키지 설치
+npm install
 
-### `npm run build`
+# 개발 서버 실행
+npm start
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# 빌드
+npm run build
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+프로젝트는 [http://localhost:3000](http://localhost:3000)에서 실행됩니다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📁 프로젝트 구조
 
-### `npm run eject`
+```
+smart-campus-portal/
+├── public/
+│   ├── manifest.json          # PWA manifest
+│   └── index.html
+├── src/
+│   ├── pages/                 # 페이지 컴포넌트
+│   │   ├── Home.tsx
+│   │   ├── Login.tsx
+│   │   ├── Notices.tsx
+│   │   ├── ChatBot.tsx
+│   │   ├── GradeCalculator.tsx
+│   │   └── CourseReview.tsx
+│   ├── App.tsx                # 메인 앱
+│   ├── index.tsx              # 엔트리 포인트
+│   ├── index.css              # 글로벌 스타일
+│   └── serviceWorkerRegistration.ts
+├── tailwind.config.js
+├── postcss.config.js
+└── package.json
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 🎯 개발 계획
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [x] 프로젝트 초기 설정
+- [x] PWA 구성
+- [x] 기본 페이지 컴포넌트
+- [ ] 백엔드 API 개발
+- [ ] AI 챗봇 RAG 파이프라인
+- [ ] 데이터베이스 연동
+- [ ] 배포
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 📝 License
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+MIT License
 
-## Learn More
+## 👥 Contributors
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+캡스톤 프로젝트 팀
