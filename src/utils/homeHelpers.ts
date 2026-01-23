@@ -1,4 +1,3 @@
-import React from 'react';
 import { ClassInfo } from '../types/home';
 
 /**
@@ -140,4 +139,58 @@ export const getGreeting = (currentHour: number): string => {
     if (currentHour < 12) return '좋은 아침이에요';
     if (currentHour < 18) return '좋은 오후예요';
     return '좋은 저녁이에요';
+};
+
+/**
+ * 두 수업 사이의 공강 시간을 계산
+ * @param class1 - 첫 번째 수업
+ * @param class2 - 두 번째 수업
+ * @returns 공강 시간 (분) 또는 null
+ */
+export const calculateBreakTime = (class1: ClassInfo, class2: ClassInfo): number | null => {
+    const class1End = parseTime(class1.time.split('-')[1]);
+    const class2Start = parseTime(class2.time.split('-')[0]);
+
+    const breakMinutes = class2Start - class1End;
+
+    // 10분 이상의 공강만 반환 (이동 시간 고려)
+    return breakMinutes >= 10 ? breakMinutes : null;
+};
+
+/**
+ * 수업이 종료되었는지 확인
+ * @param classItem - 수업 정보
+ * @param currentHour - 현재 시
+ * @param currentMinute - 현재 분
+ * @returns 종료 여부
+ */
+export const isClassCompleted = (
+    classItem: ClassInfo,
+    currentHour: number,
+    currentMinute: number
+): boolean => {
+    const currentTime = timeToMinutes(currentHour, currentMinute);
+    const classEnd = parseTime(classItem.time.split('-')[1]);
+
+    return currentTime >= classEnd;
+};
+
+/**
+ * 현재 진행 중인 수업인지 확인
+ * @param classItem - 수업 정보
+ * @param currentHour - 현재 시
+ * @param currentMinute - 현재 분
+ * @returns 진행 중 여부
+ */
+export const isCurrentClass = (
+    classItem: ClassInfo,
+    currentHour: number,
+    currentMinute: number
+): boolean => {
+    const currentTime = timeToMinutes(currentHour, currentMinute);
+    const [startTime, endTime] = classItem.time.split('-');
+    const classStart = parseTime(startTime);
+    const classEnd = parseTime(endTime);
+
+    return currentTime >= classStart && currentTime < classEnd;
 };

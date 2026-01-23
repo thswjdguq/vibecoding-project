@@ -34,6 +34,8 @@ import CourseDetail from './pages/CourseDetail';
 import NoticeList from './pages/NoticeList';
 import NoticeDetail from './pages/NoticeDetail';
 import Cafeteria from './pages/Cafeteria';
+import FullSchedule from './pages/FullSchedule';
+import RoomFinder from './pages/RoomFinder';
 import Sidebar from './components/Sidebar';
 
 function AppContent() {
@@ -306,6 +308,8 @@ function AppContent() {
               <Route path="/notices/:id" element={<NoticeDetail />} />
               <Route path="/chatbot" element={<ChatBot />} />
               <Route path="/cafeteria" element={<Cafeteria />} />
+              <Route path="/schedule" element={<FullSchedule />} />
+              <Route path="/room-finder" element={<RoomFinder />} />
               <Route path="/grade" element={<GradeCalculator />} />
               <Route path="/review" element={<CourseReview />} />
               <Route path="/mypage" element={<MyPage />} />
