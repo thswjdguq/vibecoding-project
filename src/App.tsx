@@ -287,15 +287,12 @@ function AppContent() {
         </AnimatePresence>
       </nav>
 
-      {/* Sidebar */}
+      {/* Sidebar (mobile only) */}
       <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
       {/* Main Content */}
-      <main
-        className={`pt-16 min-h-screen transition-all duration-300 ${sidebarOpen ? 'lg:ml-[280px]' : 'ml-0'
-          }`}
-      >
-        <div className="container mx-auto px-4 py-8">
+      <main className="pt-16 min-h-screen">
+        <div className="container mx-auto px-4 py-4">
           <motion.div
             key={location.pathname}
             initial={{ opacity: 0, y: 10 }}
@@ -322,10 +319,7 @@ function AppContent() {
       </main>
 
       {/* Footer */}
-      <footer
-        className={`bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-20 py-8 transition-all duration-300 ${sidebarOpen ? 'lg:ml-[280px]' : 'ml-0'
-          }`}
-      >
+      <footer className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-20 py-8">
         <div className="container mx-auto px-4 text-center text-gray-600 dark:text-gray-400">
           <p className="mb-2">© 2026 신구대학교 스마트 캠퍼스 포털. All rights reserved.</p>
           <p className="text-sm">문의사항이 있으시면 고객센터로 연락주세요.</p>

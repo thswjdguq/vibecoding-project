@@ -8,18 +8,72 @@ import { ClassInfo } from '../types/home';
 export const getTodaySchedule = (day: number): ClassInfo[] => {
     const schedules: { [key: number]: ClassInfo[] } = {
         1: [ // 월요일
-            { name: '웹프로그래밍', time: '09:00-12:00', location: 'IT관 301호', professor: '김교수' },
-            { name: '데이터베이스', time: '14:00-17:00', location: 'IT관 201호', professor: '이교수' }
+            {
+                name: '웹프로그래밍',
+                time: '09:00-12:00',
+                location: 'IT관 301호',
+                professor: '김교수',
+                startHour: 9,
+                startMinute: 0,
+                endHour: 12,
+                endMinute: 0
+            },
+            {
+                name: '데이터베이스',
+                time: '14:00-17:00',
+                location: 'IT관 201호',
+                professor: '이교수',
+                startHour: 14,
+                startMinute: 0,
+                endHour: 17,
+                endMinute: 0
+            }
         ],
         2: [ // 화요일
-            { name: '알고리즘', time: '10:00-12:00', location: 'IT관 401호', professor: '박교수' },
-            { name: '자료구조', time: '13:00-15:00', location: 'IT관 301호', professor: '최교수' }
+            {
+                name: '알고리즘',
+                time: '10:00-12:00',
+                location: 'IT관 401호',
+                professor: '박교수',
+                startHour: 10,
+                startMinute: 0,
+                endHour: 12,
+                endMinute: 0
+            },
+            {
+                name: '자료구조',
+                time: '13:00-15:00',
+                location: 'IT관 301호',
+                professor: '최교수',
+                startHour: 13,
+                startMinute: 0,
+                endHour: 15,
+                endMinute: 0
+            }
         ],
         3: [ // 수요일
-            { name: '운영체제', time: '09:00-11:00', location: 'IT관 501호', professor: '정교수' }
+            {
+                name: '운영체제',
+                time: '09:00-11:00',
+                location: 'IT관 501호',
+                professor: '정교수',
+                startHour: 9,
+                startMinute: 0,
+                endHour: 11,
+                endMinute: 0
+            }
         ],
         4: [ // 목요일
-            { name: '네트워크', time: '14:00-16:00', location: 'IT관 201호', professor: '강교수' }
+            {
+                name: '네트워크',
+                time: '14:00-16:00',
+                location: 'IT관 201호',
+                professor: '강교수',
+                startHour: 14,
+                startMinute: 0,
+                endHour: 16,
+                endMinute: 0
+            }
         ],
         5: [], // 금요일 - 공강
         0: [], // 일요일

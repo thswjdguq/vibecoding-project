@@ -8,6 +8,10 @@ export interface ClassInfo {
     time: string;          // 시간 (예: "09:00-12:00")
     location: string;      // 강의실 위치
     professor: string;     // 교수명
+    startHour: number;     // 시작 시간 (시)
+    startMinute: number;   // 시작 시간 (분)
+    endHour: number;       // 종료 시간 (시)
+    endMinute: number;     // 종료 시간 (분)
 }
 
 // 현재 수업 상태
